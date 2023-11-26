@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="shopping-list">
+        <h1>{{header || "Welcome"}}</h1>
+        <ul>
+            <li v-for="item in items" :key="item.id">{{item.text}}</li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const shoppingList = Vue.createApp({
+            data() {
+                return {
+                    header: "Shopping List App",
+                    items: [
+                        { id: 1, text: "2 kilograms of apple" },
+                        { id: 2, text: "1 kilogram of banana" }
+                    ]
+                }
+            }
+        }).mount("#shopping-list")
+    </script>
+</body>
+
+</html>
