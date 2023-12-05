@@ -1,0 +1,14 @@
+.inputs-container {
+    display: flex;
+}
+
+.input-container:not(:last-child) {
+    margin-right: 20px;
+}
+
+.primary-button {
+    background-color: #345cdf;
+    color: #ffffff;
+    border: unset;
+    padding: 5px 10px;
+}
