@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .urgent {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li
+          v-for="title in titles"
+          :key="title.id"
+          :class="{ urgent: title.urgent }"
+        >
+          {{ title.title }}
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            titles: [
+              { id: 1, title: "Title 01", urgent: true },
+              { id: 2, title: "Title 02", urgent: false },
+              { id: 3, title: "Title 03", urgent: true },
+            ],
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
+
+<!-- 
+  In this example, we have a list of titles.
+  We want to apply a CSS class called urgent to the list item if the title is urgent. 
+  We can achieve this by using the :class directive with an object. 
+  The key is the class name, and the value is a boolean that determines whether the class should be applied.
+ -->
