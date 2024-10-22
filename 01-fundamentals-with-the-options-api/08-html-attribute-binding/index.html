@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <a :href="url" :target="target">Go To Google</a>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            url: "https://www.google.com",
+            target: "_blank",
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
+
+<!-- 
+This document contains HTML attribute binding in the Vue app. url and target are bound to the href and target attributes of the anchor tag respectively.
+-->
