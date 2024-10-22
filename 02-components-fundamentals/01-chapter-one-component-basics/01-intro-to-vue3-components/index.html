@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <click-counter></click-counter>
+      <click-counter></click-counter>
+      <click-counter></click-counter>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- 
+  In this example, we have a simple Vue 3 component called ClickCounter.
+  We are using this component three times in the template to display three separate instances of the component.
+  Each instance of the component maintains its own state and behavior independently of the others.
+  This allows us to reuse the same component multiple times without any interference between instances.
+
+  IMPORTANT: There is also a bug in the rendering of the component. When use self-close tag, the component is not rendered multiple times.
+-->
