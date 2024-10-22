@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+      input {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="input" @input="handleInput" />
+      <span>{{ leftInputCharacters }} characters left</span>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            input: "",
+            maxLength: 50,
+          };
+        },
+        computed: {
+          leftInputCharacters() {
+            return this.maxLength - this.input.length;
+          },
+        },
+        methods: {
+          handleInput(event) {
+            if (event.target.value.length > this.maxLength) {
+              this.input = event.target.value.slice(0, this.maxLength);
+            }
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
+
+<!-- 
+  In this example, we have an input field that has a maximum length of 50 characters.
+  We want to display the number of characters left as the user types in the input field.
+  We can achieve this by using a computed property to calculate the number of characters left based on the input length.
+  The computed property will automatically update whenever the input length changes.
+  We also have a method that truncates the input value if it exceeds the maximum length.
+ -->
